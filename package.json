@@ -1,0 +1,25 @@
+{
+  "name": "rb-wa",
+  "version": "0.1.0",
+  "description": "Ruba, Ruang Baca Whatsapp bot",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node-lambda deploy -u nodejs8.10 -a AKIAJ66AREF53NJHCOZA -s j18aaM+Vk1nvKqzVesqZBlb4kAWLpv0Yz9ErHP24 -o arn:aws:iam::550488503230:role/service-role/jsHook-role-3xvifnib -n jsHook -r ap-southeast-1 -e production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d0ct0r4r6a/rb-wa.git"
+  },
+  "keywords": [
+    "bot",
+    "whatsapp",
+    "lambda"
+  ],
+  "author": "Arga Roh Sahrijal Saragih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d0ct0r4r6a/rb-wa/issues"
+  },
+  "homepage": "https://github.com/d0ct0r4r6a/rb-wa#readme"
+}

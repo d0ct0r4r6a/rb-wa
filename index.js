@@ -1,28 +1,13 @@
-const wablasToken =
-  "Vg5qPrWTzDmLA7cXiZjnfJegfJFlQsYD5eTwsKeLOxKuMUpaCYibEQw9gZXWKkE2";
 const { initCommand } = require("./commands");
-const { request } = require("./request");
 const {
   listCommands,
   formResponse,
   getDeadlineResponse
 } = require("./responses");
-var options = {
-  method: "POST",
-  hostname: "wablas.com",
-  path: "/api/send-message",
-  headers: {
-    Authorization: wablasToken,
-    "Content-Type": "application/json"
-  }
-};
-var postData = {
-  phone: "081276763324",
-  message: "Hello"
-};
+
 exports.handler = async event => {
   var body = event.body;
-  var bodyProperties, message, phone; // see the end of file for sampe bodyProperties
+  var bodyProperties, message, phone; // see the end of file for sample bodyProperties
   if (body) {
     bodyProperties = body.split("&");
     phone = bodyProperties[2].split("=")[1];
@@ -36,7 +21,6 @@ exports.handler = async event => {
   } else if (message === "rb+form") {
     responseMessage = formResponse;
   } else if (message === "rb+deadline" || message === "rb deadline") {
-    // console.log(await request(options, postData));
     responseMessage = await getDeadlineResponse(phone);
   } else if (message === "echo") {
     responseMessage = "echo";
