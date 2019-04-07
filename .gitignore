@@ -1,0 +1,5 @@
+event.json
+.env
+deploy.env
+.lambda
+.vscode
