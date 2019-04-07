@@ -21,11 +21,14 @@ exports.listCommandResponse = `Hai! Aku Ruba, bot Whatsapp dari Ruangbaca.
 
 Berikut perintah yang kumengerti:
 
-\`\`\`rb deadline\`\`\`
+\`\`\`Rb deadline\`\`\`
 Menampilkan tanggal terakhir peminjaman kamu
 
-\`\`\`rb form \`\`\`
+\`\`\`Rb form \`\`\`
 Menampilkan link menuju form peminjaman
+
+\`\`\`Rb return \`\`\`
+Menampilkan alamat pengembalian buku
 `;
 
 exports.formResponse = `Kunjungi _link_ berikut untuk mengisi form peminjaman buku Ruang Baca:
