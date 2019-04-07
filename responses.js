@@ -3,7 +3,7 @@
 const { request } = require("./request");
 const googleApiKey = "AIzaSyCg_uKOlJJQcbaFfSv0mvpNVKm-cflu1Rs";
 const spreadsheetId = "1LB_yKOJdBq_m7ffc1t1xmeyKDsMfd2dhnzTA-zvhZxY";
-const range = "Peminjaman!A1:I";
+const range = "Peminjaman!A1:K";
 // var options = {
 //   method: "POST",
 //   hostname: "wablas.com",
@@ -19,7 +19,7 @@ const range = "Peminjaman!A1:I";
 // };
 exports.listCommandResponse = `Hai! Aku Ruba, bot Whatsapp dari Ruangbaca.
 
-Berikut perintah yang kumengerti:
+Kamu bisa mendapatkan informasi dariku dengan mengetik:
 
 \`\`\`Rb deadline\`\`\`
 Menampilkan tanggal terakhir peminjaman kamu
@@ -74,7 +74,7 @@ exports.getDeadlineResponse = async phone => {
   if (response) {
     let values = response.values.reverse();
     for (let i = 0; i < values.length; i++) {
-      if (values[i][2].indexOf(phone) > -1) {
+      if (values[i][2].indexOf(phone) > -1 && Boolean(values[i][10])) {
         deadline = values[i][7];
         break;
       }
