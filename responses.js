@@ -1,7 +1,7 @@
 // const wablasToken =
 //   "Vg5qPrWTzDmLA7cXiZjnfJegfJFlQsYD5eTwsKeLOxKuMUpaCYibEQw9gZXWKkE2";
 const { request } = require("./request");
-const googleApiKey = "AIzaSyCg_uKOlJJQcbaFfSv0mvpNVKm-cflu1Rs";
+const googleApiKey = "AIzaSyCh74Mu-fV-BlgBBZDCkJ8TimAQXKgkk7A";
 const spreadsheetId = "1LB_yKOJdBq_m7ffc1t1xmeyKDsMfd2dhnzTA-zvhZxY";
 const range = "Peminjaman!A1:K";
 // var options = {
