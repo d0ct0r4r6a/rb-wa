@@ -12,6 +12,7 @@ const {
 } = require("./responses");
 
 exports.handler = async event => {
+  console.log(event);
   var body = event.body;
   var bodyProperties, message, phone; // see the end of file for sample bodyProperties
   if (body) {
@@ -19,6 +20,7 @@ exports.handler = async event => {
     phone = bodyProperties[2].split("=")[1];
     message = bodyProperties[3].split("=")[1];
   } else {
+    phone = event.phone;
     message = event.message;
   }
   var responseMessage;
