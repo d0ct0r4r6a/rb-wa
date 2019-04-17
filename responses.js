@@ -91,13 +91,14 @@ exports.getDeadlineResponse = async phone => {
 };
 
 exports.getHasResponse = async message => {
-  let bookTitle,
+  let bookTitle = "",
     responseMessage = "";
   if (message.includes("has")) {
     bookTitle = message.slice(message.indexOf("has") + 4);
   } else if (message.includes("ada")) {
     bookTitle = message.slice(message.indexOf("ada") + 4);
   }
+  bookTitle = bookTitle.replace(/\+/g, " ");
   const range = "Buku!C1:K";
   var options = {
     method: "GET",
