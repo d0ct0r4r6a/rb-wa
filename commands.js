@@ -21,3 +21,8 @@ exports.returnCommand = message => {
   var commands = ["rb+return", "rb+balikin", "Rb+return", "Rb+balikin"];
   return commands.includes(message);
 };
+
+exports.hasCommand = message => {
+  var commands = ["rb+has", "rb+ada", "Rb+has", "Rb+ada"];
+  return commands.some(command => message.includes(command));
+};

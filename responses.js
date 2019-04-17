@@ -3,7 +3,6 @@
 const { request } = require("./request");
 const googleApiKey = "AIzaSyCh74Mu-fV-BlgBBZDCkJ8TimAQXKgkk7A";
 const spreadsheetId = "1LB_yKOJdBq_m7ffc1t1xmeyKDsMfd2dhnzTA-zvhZxY";
-const range = "Peminjaman!A1:K";
 // var options = {
 //   method: "POST",
 //   hostname: "wablas.com",
@@ -21,8 +20,12 @@ exports.listCommandResponse = `Hai! Aku Ruba, bot Whatsapp dari Ruangbaca.
 
 Kamu bisa mendapatkan informasi dariku dengan mengetik:
 
+\`\`\`Rb has <judul>\`\`\` 🆕
+Contoh: Rb has Dilan 1990
+Mengecek ketersediaan buku dengan judul tertentu
+
 \`\`\`Rb deadline\`\`\`
-Menampilkan tanggal terakhir peminjaman kamu
+Mengecek tanggal terakhir peminjaman kamu
 
 \`\`\`Rb form \`\`\`
 Menampilkan link menuju form peminjaman
@@ -53,6 +56,7 @@ Terima kasih, ya :)
 `;
 
 exports.getDeadlineResponse = async phone => {
+  const range = "Peminjaman!A1:K";
   if (phone) phone = phone.slice(2);
   else phone = "81276763324";
   var options = {
@@ -84,4 +88,48 @@ exports.getDeadlineResponse = async phone => {
     deadline ||
     "Maaf, sepertinya terjadi kesalahan, Ruba tidak dapat menemukan peminjaman kamu. Silakan kabari kami judul buku yang sedang kamu pinjam."
   );
+};
+
+exports.getHasResponse = async message => {
+  let bookTitle,
+    responseMessage = "";
+  if (message.includes("has")) {
+    bookTitle = message.slice(message.indexOf("has") + 4);
+  } else if (message.includes("ada")) {
+    bookTitle = message.slice(message.indexOf("ada") + 4);
+  }
+  const range = "Buku!C1:K";
+  var options = {
+    method: "GET",
+    hostname: "sheets.googleapis.com",
+    path:
+      "/v4/spreadsheets/" +
+      spreadsheetId +
+      "/values/" +
+      range +
+      "?key=" +
+      googleApiKey,
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+  let response = await request(options);
+  if (response) {
+    let postedBookTitles = response.values
+      .filter(row => row[8] === "Ya")
+      .map(row => row[0]);
+    if (postedBookTitles.includes(bookTitle)) {
+      responseMessage = `Ya! Ruba mempunyai buku "${bookTitle}".
+
+Untuk meminjamnya, kamu bisa mengisi form di:
+
+https://ruba.xyz/pinjam;`;
+    } else {
+      responseMessage = `Maaf, Ruba belum punya buku itu.`;
+    }
+  } else {
+    responseMessage =
+      "Maaf, sepertinya terjadi kesalahan teknis. Mohon coba beberapa saat lagi.";
+  }
+  return responseMessage;
 };

@@ -2,13 +2,15 @@ const {
   initCommand,
   deadlineCommand,
   formCommand,
+  hasCommand,
   returnCommand
 } = require("./commands");
 const {
   listCommandResponse,
   formResponse,
   returnResponse,
-  getDeadlineResponse
+  getDeadlineResponse,
+  getHasResponse
 } = require("./responses");
 
 exports.handler = async event => {
@@ -31,6 +33,8 @@ exports.handler = async event => {
     responseMessage = returnResponse;
   } else if (deadlineCommand(message)) {
     responseMessage = await getDeadlineResponse(phone);
+  } else if (hasCommand(message)) {
+    responseMessage = await getHasResponse(message);
   } else if (message === "echo") {
     responseMessage = "echo";
   } else if (message === "I+love+you") {
