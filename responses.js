@@ -124,7 +124,7 @@ exports.getHasResponse = async message => {
 
 Untuk meminjamnya, kamu bisa mengisi form di:
 
-https://ruba.xyz/pinjam;`;
+https://ruba.xyz/pinjam`;
     } else {
       responseMessage = `Maaf, Ruba belum punya buku itu.`;
     }
