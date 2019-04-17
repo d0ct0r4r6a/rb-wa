@@ -12,7 +12,6 @@ const {
 } = require("./responses");
 
 exports.handler = async event => {
-  console.log(event);
   var body = event.body;
   var bodyProperties, message, phone; // see the end of file for sample bodyProperties
   if (body) {
@@ -38,6 +37,9 @@ exports.handler = async event => {
     responseMessage = "Love you too";
   }
 
+  console.log(
+    `From: ${phone}, Message: ${message}, Response: ${responseMessage}`
+  );
   const response = {
     statusCode: 200,
     body: responseMessage
