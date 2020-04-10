@@ -7,6 +7,11 @@ function start(client) {
       client.sendText(message.from, '👋 Selamat malam!');
     }
   });
+
+  client.page.on('error', _ => {
+    console.log('ERROR HERE!');
+    console.log(_);
+  });
   return 0;
 }
 
