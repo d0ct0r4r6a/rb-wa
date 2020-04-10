@@ -1,4 +1,3 @@
-const fs = require('fs');
 const wa = require('@open-wa/wa-automate');
 
 function start(client) {
