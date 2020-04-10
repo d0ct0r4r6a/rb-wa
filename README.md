@@ -14,3 +14,5 @@ A bot that answers Sahabat Baca frequently asked questions.
 * `Rb deadline`, `Rb tenggat`
 
   Print the last date of borrowing period
+
+<a href="https://www.openode.io/">Sponsored and hosted by opeNode.io</a>
