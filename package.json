@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "try": "node-lambda run",
-    "deploy": "node-lambda deploy -u nodejs8.10 -a AKIAJ66AREF53NJHCOZA -s j18aaM+Vk1nvKqzVesqZBlb4kAWLpv0Yz9ErHP24 -o arn:aws:iam::550488503230:role/service-role/jsHook-role-3xvifnib -n jsHook -r ap-southeast-1 -e production",
+    "deploy": "node-lambda deploy -u nodejs8.10 -a AKIAJ66AREF53NJHCOZA -s j18aaM+Vk1nvKqzVesqZBlb4kAWLpv0Yz9ErHP24 -o arn:aws:iam::550488503230:role/service-role/jsHook-role-3xvifnib -n jsHook -r ap-southeast-1 -e production"
   },
   "repository": {
     "type": "git",
