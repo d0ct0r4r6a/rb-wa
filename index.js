@@ -4,7 +4,7 @@ function start(client) {
   client.onMessage(message => {
     console.log(message);
     if (message.body === 'Ruba') {
-      client.sendText(message.from, '👋 Selamat malam!');
+      client.sendText(message.from, `Halo, ${message.sender.name}!`);
     }
   });
 
