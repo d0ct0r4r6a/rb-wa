@@ -3,3 +3,5 @@ event.json
 deploy.env
 .lambda
 .vscode
+node_modules
+session.data.json
