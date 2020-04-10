@@ -4,8 +4,8 @@ const wa = require('@open-wa/wa-automate');
 function start(client) {
   client.onMessage(message => {
     console.log(message);
-    if (message.body === 'Hi') {
-      client.sendText(message.from, '👋 Hello!');
+    if (message.body === 'Ruba') {
+      client.sendText(message.from, '👋 Selamat malam!');
     }
   });
   return 0;
