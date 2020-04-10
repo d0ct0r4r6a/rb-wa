@@ -1,21 +1,5 @@
-// const wablasToken =
-//   "Vg5qPrWTzDmLA7cXiZjnfJegfJFlQsYD5eTwsKeLOxKuMUpaCYibEQw9gZXWKkE2";
 const { request } = require("./request");
-const googleApiKey = "AIzaSyCh74Mu-fV-BlgBBZDCkJ8TimAQXKgkk7A";
-const spreadsheetId = "1LB_yKOJdBq_m7ffc1t1xmeyKDsMfd2dhnzTA-zvhZxY";
-// var options = {
-//   method: "POST",
-//   hostname: "wablas.com",
-//   path: "/api/send-message",
-//   headers: {
-//     Authorization: wablasToken,
-//     "Content-Type": "application/json"
-//   }
-// };
-// var postData = {
-//   phone: "081276763324",
-//   message: "Hello"
-// };
+
 exports.listCommandResponse = `Hai! Aku Ruba, bot Whatsapp dari Ruangbaca.
 
 Kamu bisa mendapatkan informasi dariku dengan mengetik:
