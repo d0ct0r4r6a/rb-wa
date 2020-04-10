@@ -7,7 +7,8 @@
     "try": "node-lambda run",
     "deploy": "node-lambda deploy -u nodejs8.10 -a AKIAJ66AREF53NJHCOZA -s j18aaM+Vk1nvKqzVesqZBlb4kAWLpv0Yz9ErHP24 -o arn:aws:iam::550488503230:role/service-role/jsHook-role-3xvifnib -n jsHook -r ap-southeast-1 -e production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "node index.js"
   },
   "repository": {
     "type": "git",
